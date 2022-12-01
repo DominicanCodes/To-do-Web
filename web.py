@@ -1,5 +1,12 @@
 import streamlit as st
 from modules import functions
+import os
+
+st.set_page_config(layout='wide')
+
+if not os.path.exists("todos.txt"):
+    with open("todos.txt", "w") as file:
+        pass
 
 todos = functions.get_todos()
 
